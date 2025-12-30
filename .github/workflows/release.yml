@@ -1,0 +1,51 @@
+name: Release Extension
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers on version tags like v1.0.0, v1.2.3, etc.
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: tag_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Create extension package
+        run: |
+          # Create a zip file with all necessary extension files
+          zip -r youku-dual-subtitle-${{ steps.tag_version.outputs.VERSION }}.zip \
+            manifest.json \
+            background.js \
+            bridge.js \
+            content.js \
+            dict.js \
+            popup.html \
+            popup.js \
+            popup.css \
+            help.html \
+            zhongwen-popup.css \
+            privacy-policy.md \
+            README.md \
+            CREDITS.md \
+            LICENSE \
+            LICENSE-DICTIONARIES \
+            icons/ \
+            data/ \
+            -x "*.git*" "*.DS_Store"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: youku-dual-subtitle-${{ steps.tag_version.outputs.VERSION }}.zip
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
