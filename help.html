@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youku Dual Subtitle - Help</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #f9fafb;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #667eea;
+      font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #374151;
+      font-size: 22px;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    h3 {
+      color: #4b5563;
+      font-size: 18px;
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #374151;
+    }
+
+    ul, ol {
+      margin-bottom: 20px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #374151;
+    }
+
+    .feature {
+      background: #f9fafb;
+      border-left: 4px solid #667eea;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+
+    .feature strong {
+      color: #667eea;
+    }
+
+    kbd {
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      padding: 3px 8px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .shortcut-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: #ffffff;
+    }
+
+    .shortcut-table th {
+      background: #f9fafb;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+      color: #374151;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .shortcut-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .shortcut-table td:first-child {
+      font-weight: 600;
+      color: #667eea;
+    }
+
+    .note {
+      background: #fef3c7;
+      border-left: 4px solid #f59e0b;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    .note strong {
+      color: #92400e;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      color: #667eea;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Youku Dual Subtitle</h1>
+    <p class="subtitle">Language learning companion for Youku videos</p>
+
+    <h2>Overview</h2>
+    <p>Youku Dual Subtitle is a Chrome extension that enhances your Chinese language learning experience by displaying dual subtitles (Chinese + your chosen language) with interactive features.</p>
+
+    <h2>Features</h2>
+
+    <div class="feature">
+      <strong>Dual Subtitle Display:</strong> Shows Chinese subtitles (Simplified or Traditional) alongside a second language of your choice for context.
+    </div>
+
+    <div class="feature">
+      <strong>Interactive Dictionary:</strong> Hover over any Chinese word to see its definition, pinyin, and tone colors. The video automatically pauses when you hover over the Chinese subtitle.
+    </div>
+
+    <div class="feature">
+      <strong>Tone Colors:</strong> Chinese characters and pinyin are color-coded by tone (1st, 2nd, 3rd, 4th, neutral) to help with pronunciation. Choose from 5 different color schemes.
+    </div>
+
+    <div class="feature">
+      <strong>Automatic Pause:</strong> Enable this feature to automatically pause the video when a new subtitle appears, giving you time to study the sentence.
+    </div>
+
+    <div class="feature">
+      <strong>Subtitle Navigation:</strong> Use keyboard shortcuts to jump between subtitles, perfect for reviewing dialogues and skipping silent parts.
+    </div>
+
+    <h2>Keyboard Shortcuts</h2>
+
+    <h3>Subtitle Navigation</h3>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><kbd>A</kbd></td>
+          <td>Jump to the <strong>previous</strong> subtitle</td>
+        </tr>
+        <tr>
+          <td><kbd>D</kbd></td>
+          <td>Jump to the <strong>next</strong> subtitle</td>
+        </tr>
+        <tr>
+          <td><kbd>S</kbd></td>
+          <td><strong>Replay</strong> the current subtitle from the beginning</td>
+        </tr>
+        <tr>
+          <td><kbd>P</kbd></td>
+          <td><strong>Toggle</strong> Automatic Pause on/off</td>
+        </tr>
+        <tr>
+          <td><kbd>Space</kbd></td>
+          <td>Play/Pause video (standard video player control)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Dictionary Lookups (when hovering over a word)</h3>
+
+    <table class="shortcut-table">
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>1</kbd></td>
+          <td>Look up word in <strong>LINE Dict</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>2</kbd></td>
+          <td>Look up pronunciation on <strong>Forvo</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>3</kbd></td>
+          <td>Look up word in <strong>Dict.cn</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>4</kbd></td>
+          <td>Look up word in <strong>iCIBA</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>5</kbd></td>
+          <td>Look up word in <strong>MDBG</strong> dictionary</td>
+        </tr>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>6</kbd></td>
+          <td>Look up word on <strong>Reverso</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>Alt</kbd> + <kbd>7</kbd></td>
+          <td>Look up word in <strong>MoeDict</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>T</kbd></td>
+          <td>Find example sentences on <strong>Tatoeba</strong></td>
+        </tr>
+        <tr>
+          <td><kbd>G</kbd></td>
+          <td>Look up grammar notes on <strong>AllSet Learning</strong> (if available)</td>
+        </tr>
+        <tr>
+          <td><kbd>V</kbd></td>
+          <td>Look up vocabulary notes on <strong>AllSet Learning</strong> (if available)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <strong>Note:</strong> Keyboard shortcuts work anywhere on the page except when typing in input fields. Dictionary lookup shortcuts only work when hovering over a Chinese word and the popup is visible.
+    </div>
+
+    <h2>Settings</h2>
+
+    <h3>Chinese Variant</h3>
+    <p>Choose between Simplified Chinese (简体中文) or Traditional Chinese (繁体中文). This affects both the subtitle display and dictionary lookups.</p>
+
+    <h3>Second Language</h3>
+    <p>Select a secondary subtitle language for translation context. Available languages depend on what Youku provides for each video. Common options include English, Spanish, Japanese, Korean, and others.</p>
+
+    <h3>Tone Color Scheme</h3>
+    <p>Choose your preferred color scheme for pinyin tones. Neutral tones are painted in Grey:</p>
+    <ul>
+      <li><strong>Pleco:</strong> Red, Green, Blue, Purple (default)</li>
+      <li><strong>Dummit:</strong> Red, Orange, Green, Light Blue</li>
+      <li><strong>Sinosplice:</strong> Orange, Green, Blue, Red</li>
+      <li><strong>Hanping:</strong> Light Blue, Green, Orange, Red</li>
+      <li><strong>MDBG:</strong> Red, Orange, Green, Blue</li>
+    </ul>
+
+    <h3>Font Size</h3>
+    <p>Adjust the subtitle font size using the <kbd>−</kbd> and <kbd>+</kbd> buttons. Range: 10px to 40px.</p>
+
+    <h3>Show Pinyin Above Characters</h3>
+    <p>Toggle whether pinyin (pronunciation guide) appears above Chinese characters in the subtitle. Disable this for a cleaner look if you don't need pronunciation help.</p>
+
+    <h3>Automatic Pause</h3>
+    <p>When enabled, the video will automatically pause each time a new subtitle appears. This is extremely useful for language learners who want to study each sentence carefully before continuing.</p>
+
+    <h2>How to Use</h2>
+
+    <ol>
+      <li><strong>Navigate to a Youku video:</strong> Go to <code>https://www.youku.tv/v/v_show/...</code></li>
+      <li><strong>Wait for subtitles to load:</strong> The extension will automatically detect available subtitles.</li>
+      <li><strong>Open the popup:</strong> Click the extension icon in your Chrome toolbar.</li>
+      <li><strong>Configure settings:</strong> Choose your preferred Chinese variant, second language, and other options.</li>
+      <li><strong>Study the subtitles:</strong> Watch the video with dual subtitles displayed.</li>
+      <li><strong>Hover over words:</strong> Hover your mouse over any Chinese word to see its definition and pronunciation.</li>
+      <li><strong>Navigate efficiently:</strong> Use <kbd>A</kbd>, <kbd>D</kbd>, and <kbd>S</kbd> keys to jump between dialogues.</li>
+    </ol>
+
+    <h2>Tips for Language Learners</h2>
+
+    <ul>
+      <li><strong>Enable Automatic Pause:</strong> This gives you time to read, understand, and look up words before the video continues.</li>
+      <li><strong>Use subtitle navigation:</strong> Press <kbd>D</kbd> to skip silent parts and move directly to the next dialogue.</li>
+      <li><strong>Replay for practice:</strong> Press <kbd>S</kbd> to repeat the current subtitle line for shadowing or pronunciation practice.</li>
+      <li><strong>Hover for definitions:</strong> Take advantage of the built-in dictionary to learn new words in context.</li>
+      <li><strong>Try different tone colors:</strong> Find the color scheme that helps you best distinguish tones.</li>
+      <li><strong>Drag to reposition:</strong> Click and drag the subtitle overlay to move it to your preferred position on screen.</li>
+    </ul>
+
+    <h2>Privacy</h2>
+
+    <p>This extension works completely offline once installed. The dictionary data is stored locally, and no information is sent to external servers. All settings are saved locally in your browser.</p>
+
+    <h2>Troubleshooting</h2>
+
+    <h3>Subtitles not appearing?</h3>
+    <ul>
+      <li>Make sure you're on a Youku video page (<code>youku.tv/v/v_show/...</code>)</li>
+      <li>Wait a few seconds for the video player to fully load</li>
+      <li>Check that the video has subtitles available</li>
+      <li>Try reloading the page</li>
+    </ul>
+
+    <h3>Dictionary not working?</h3>
+    <ul>
+      <li>If you see "Extension context invalidated", reload the page (F5)</li>
+      <li>This happens when the extension is reloaded while the page is open</li>
+    </ul>
+
+    <h3>Subtitles in wrong position?</h3>
+    <ul>
+      <li>Click and drag the subtitle overlay to reposition it</li>
+      <li>Your preferred position will be saved automatically</li>
+    </ul>
+
+    <h2>Credits</h2>
+
+    <p>Dictionary data: <a href="https://cc-cedict.org/" target="_blank">CC-CEDICT</a> (Creative Commons)</p>
+    <p>Based on the <a href="https://github.com/cschiller/zhongwen" target="_blank">Zhongwen Chinese-English Dictionary</a> extension architecture.</p>
+
+    <hr style="margin: 40px 0; border: none; border-top: 1px solid #e5e7eb;">
+
+    <p style="text-align: center; color: #9ca3af; font-size: 13px;">
+      Youku Dual Subtitle &copy; 2025 Daniel Sangorrin<br>
+      Licensed under GPL-2.0-or-later
+    </p>
+  </div>
+</body>
+</html>

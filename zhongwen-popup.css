@@ -1,0 +1,80 @@
+/* SPDX-License-Identifier: GPL-2.0-or-later */
+/* Copyright (C) 2025 Daniel Sangorrin */
+/* Copyright (C) 2019-2023 Christian Schiller (original Zhongwen) */
+
+/* Dictionary popup styling - Derived from Zhongwen Chinese-English Dictionary */
+/* https://github.com/cschiller/zhongwen */
+
+/* Reset styles for popup */
+#zhongwen-window, #zhongwen-window * {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border: none !important;
+  margin: 0px;
+  padding: 0px;
+  letter-spacing: normal;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none;
+  white-space: normal;
+  word-spacing: normal;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: Tahoma, Geneva, sans-serif;
+  visibility: visible;
+  line-height: initial;
+}
+
+/* Main popup container */
+#zhongwen-window {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  border: 1px solid #d0d0d0 !important;
+  padding: 8px 12px !important;
+  background: #e6f4ff !important;
+  min-width: 150px;
+  max-width: 400px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+/* Chinese characters */
+#zhongwen-window .w-hanzi {
+  font-size: 24px !important;
+  margin-right: 8px !important;
+  color: #000 !important;
+  font-weight: bold !important;
+  display: inline-block;
+}
+
+/* Pinyin */
+#zhongwen-window .w-pinyin {
+  font-size: 14px !important;
+  margin-right: 4px !important;
+  color: #333 !important;
+  display: inline-block;
+}
+
+/* Definitions */
+#zhongwen-window .w-def {
+  font-size: 13px !important;
+  color: #000 !important;
+  display: block;
+  margin-top: 2px !important;
+  line-height: 1.4 !important;
+}
+
+/* Chinese word spans in subtitle (hoverable) */
+.chinese-word {
+  cursor: pointer;
+  position: relative;
+  display: inline;
+  transition: opacity 0.1s;
+}
+
+.chinese-word:hover {
+  opacity: 0.8;
+}

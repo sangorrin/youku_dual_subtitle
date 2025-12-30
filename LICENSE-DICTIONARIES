@@ -1,0 +1,39 @@
+Dictionary Data Licenses
+========================
+
+This extension uses dictionary data files with the following licenses:
+
+CC-CEDICT (cedict_ts.u8, cedict.idx)
+-------------------------------------
+Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Copyright Notice:
+  CC-CEDICT - Community maintained free Chinese-English dictionary
+  Published by MDBG
+  https://www.mdbg.net/chinese/dictionary?page=cc-cedict
+
+  Referenced works:
+  CEDICT - Copyright (C) 1997, 1998 Paul Andrew Denisowski
+
+License Summary:
+  You are free to:
+    - Share: copy and redistribute the material in any medium or format
+    - Adapt: remix, transform, and build upon the material for any purpose, even commercially
+
+  Under the following terms:
+    - Attribution: You must give appropriate credit, provide a link to the license,
+      and indicate if changes were made
+    - ShareAlike: If you remix, transform, or build upon the material, you must
+      distribute your contributions under the same license as the original
+
+Full license text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+
+Grammar and Vocabulary Keywords (grammarKeywordsMin.json, vocabularyKeywordsMin.json)
+-------------------------------------------------------------------------------------
+These files are derived from the Zhongwen Chinese-English Dictionary Extension
+Copyright (C) 2019-2023 Christian Schiller
+
+Licensed under the GNU General Public License version 2
+See main LICENSE file for full GPL-2.0 license text

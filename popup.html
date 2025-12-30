@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Subtitle Language</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <h3>Youku Dual Subtitle</h3>
+      <a href="#" id="help-icon" class="help-icon" title="Help">?</a>
+    </div>
+    <div class="popup-content">
+      <div class="form-group">
+        <label for="chinese-variant-select">Chinese Variant:</label>
+        <select id="chinese-variant-select" class="subtitle-select">
+          <option value="simplified">简体中文 (Simplified)</option>
+          <option value="traditional">繁体中文 (Traditional)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="second-subtitle-select">Second Language:</label>
+        <select id="second-subtitle-select" class="subtitle-select">
+          <option value="">Loading...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="tone-color-select">Tone Color Scheme:</label>
+        <select id="tone-color-select" class="subtitle-select">
+          <option value="pleco">Pleco (Red, Green, Blue, Purple)</option>
+          <option value="dummit">Dummit (Red, Orange, Green, Light Blue)</option>
+          <option value="sinosplice">Sinosplice (Orange, Green, Blue, Red)</option>
+          <option value="hanping">Hanping (Light Blue, Green, Orange, Red)</option>
+          <option value="mdbg">MDBG (Red, Orange, Green, Blue)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Font Size:</label>
+        <div class="font-size-control">
+          <button id="font-decrease" class="font-btn">−</button>
+          <span id="font-size-display" class="font-size-value">16px</span>
+          <button id="font-increase" class="font-btn">+</button>
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="pinyin-toggle" checked>
+          <span>Show Pinyin Above Characters</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="auto-pause-toggle">
+          <span>Automatic Pause</span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button id="reset-position-btn" class="reset-btn">Reset Subtitle Position</button>
+      </div>
+
+      <div id="status" class="status" style="display: none;">Ready</div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
