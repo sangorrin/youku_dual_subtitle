@@ -43,7 +43,7 @@ jobs:
             -x "*.git*" "*.DS_Store"
 
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: youku-dual-subtitle-${{ steps.tag_version.outputs.VERSION }}.zip
           generate_release_notes: true
