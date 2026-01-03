@@ -23,7 +23,7 @@ The extension also features a powerful hover dictionary for Chinese characters w
 - Hover over any Chinese word to see definitions
 - Automatic word segmentation
 - Pinyin with tone marks
-- **5 color schemes** for tone visualization: Pleco (default), Dummit, Sinosplice, Hanping, MDBG
+- **5 color schemes** for tone visualization: Pleco (default), Dummit, Sinosplice, Hanping, and MDBG. Or choose None for no coloring.
 - Toggle pinyin display on/off
 - Video auto-pauses during dictionary lookup
 
@@ -60,7 +60,7 @@ The extension also features a powerful hover dictionary for Chinese characters w
 1. **Select Languages**: Click the extension icon and choose:
    - Chinese variant (Simplified/Traditional)
    - Second subtitle language (English, Spanish, Japanese, Korean, etc.)
-   - Tone color scheme (Pleco, Dummit, Sinosplice, Hanping, MDBG)
+   - Tone color scheme (Pleco, Dummit, Sinosplice, Hanping, MDBG, or None)
 
 2. **Adjust Display**: Use the popup controls to:
    - Increase/decrease font size (− and + buttons)
