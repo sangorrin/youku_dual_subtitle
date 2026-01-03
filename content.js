@@ -125,6 +125,9 @@
           font-weight: normal;
           opacity: 0.95;
           line-height: 1.3;
+          background: rgba(0, 0, 0, 0.65);
+          padding: 2px 4px;
+          border-radius: 3px;
         }
       `;
       document.head.appendChild(style);
@@ -154,7 +157,6 @@
 
     // Apply shared styles to both overlays
     [chineseOverlay, secondOverlay].forEach(overlay => {
-      overlay.style.background = 'transparent';
       overlay.style.color = '#ffffff';
       overlay.style.fontSize = fontSize + 'px';
       overlay.style.fontWeight = 'bold';
@@ -169,6 +171,13 @@
       overlay.style.wordWrap = 'break-word';
       overlay.style.pointerEvents = 'auto'; // Allow hover on words
     });
+
+    // Add semitransparent dark background to Chinese overlay
+    chineseOverlay.style.background = 'rgba(0, 0, 0, 0.65)';
+    chineseOverlay.style.borderRadius = '8px';
+
+    // Keep second overlay transparent (for non-Chinese subtitles)
+    secondOverlay.style.background = 'transparent';
 
     // Append overlays to container
     overlayContainer.appendChild(chineseOverlay);
