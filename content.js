@@ -895,7 +895,7 @@
         const hanziSpans = primaryCharacters.map((char, index) => {
           const syllable = syllables[index] || '';
           const tone = getToneNumber(syllable);
-          const color = getToneColor(tone);
+          const color = getToneColor(tone, true);
           return `<span style="color: ${color} !important; font-size: 24px; font-weight: bold;">${char}</span>`;
         }).join('');
         html += `<span class="w-hanzi" style="margin-right: 8px;">${hanziSpans}</span>`;
@@ -906,7 +906,7 @@
           const alternateSpans = alternateCharacters.map((char, index) => {
             const syllable = syllables[index] || '';
             const tone = getToneNumber(syllable);
-            const color = getToneColor(tone);
+            const color = getToneColor(tone, true);
             return `<span style="color: ${color} !important; font-size: 24px; font-weight: bold;">${char}</span>`;
           }).join('');
           html += `<span class="w-hanzi" style="margin-right: 8px; opacity: 0.7;">${alternateSpans}</span>`;
@@ -928,7 +928,7 @@
         const syllables = convertedPinyin.split(' ');
         const pinyinSpans = syllables.map(syllable => {
           const tone = getToneNumber(syllable);
-          const color = getToneColor(tone);
+          const color = getToneColor(tone, true);
           return `<span class="w-pinyin" style="color: ${color} !important;">${syllable}</span>`;
         }).join('');  // Join without spaces for compact display
         html += pinyinSpans + '<br>';
@@ -980,7 +980,7 @@
               return variant.split('').map((char, index) => {
                 const syllable = syllables[index] || syllables[0]; // Fallback to first syllable
                 const tone = getToneNumber(syllable);
-                const color = getToneColor(tone);
+                const color = getToneColor(tone, true);
                 return `<span style="color: ${color}">${char}</span>`;
               }).join('');
             });
@@ -993,7 +993,7 @@
             // Color each pinyin syllable
             const coloredPinyin = syllables.map(syllable => {
               const tone = getToneNumber(syllable);
-              const color = getToneColor(tone);
+              const color = getToneColor(tone, true);
               return `<span style="color: ${color}">${syllable}</span>`;
             }).join('');
 
@@ -1110,10 +1110,21 @@
       3: '#00aa00', // green
       4: '#0066ff', // blue
       5: '#888888'  // gray
+    },
+    none: {
+      1: '#ffffff', // white for subtitles
+      2: '#ffffff', // white for subtitles
+      3: '#ffffff', // white for subtitles
+      4: '#ffffff', // white for subtitles
+      5: '#ffffff'  // white for subtitles
     }
   };
 
-  function getToneColor(tone) {
+  function getToneColor(tone, forDictionary = false) {
+    // For dictionary: if subtitle scheme is 'none', use black (no coloring)
+    if (forDictionary && toneColorScheme === 'none') {
+      return '#000000'; // black text
+    }
     const scheme = toneColorSchemes[toneColorScheme] || toneColorSchemes.pleco;
     const toneNum = parseInt(tone) || 5;
     return scheme[toneNum] || scheme[5];
