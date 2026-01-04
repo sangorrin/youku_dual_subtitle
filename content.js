@@ -125,7 +125,7 @@
           font-weight: normal;
           opacity: 0.95;
           line-height: 1.3;
-          background: rgba(0, 0, 0, 0.65);
+          background: transparent;
           padding: 2px 4px;
           border-radius: 3px;
         }
