@@ -757,10 +757,17 @@
     // Don't trigger hover resume if we're dragging
     if (isDragging) return;
 
-    if (videoElement && wasPlayingBeforeHover) {
-      videoElement.play();
-      wasPlayingBeforeHover = false;
-    }
+    // Add delay to check if cursor is moving to popup
+    setTimeout(() => {
+      const popup = document.getElementById('zhongwen-window');
+      const contentWrapper = popup ? popup.querySelector('.popup-content') : null;
+
+      // Only resume if not hovering over popup
+      if (videoElement && wasPlayingBeforeHover && (!contentWrapper || !contentWrapper.matches(':hover'))) {
+        videoElement.play();
+        wasPlayingBeforeHover = false;
+      }
+    }, 100);
   }
 
   // Handle word hover - show dictionary popup
@@ -868,6 +875,12 @@
     contentWrapper.addEventListener('mouseleave', () => {
       // Hide popup when leaving
       hideDictionaryPopup();
+
+      // Resume video if it was paused for hover
+      if (videoElement && wasPlayingBeforeHover) {
+        videoElement.play();
+        wasPlayingBeforeHover = false;
+      }
     });
 
     // Store hide timeout function for the word leave handler
