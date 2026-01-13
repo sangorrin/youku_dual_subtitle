@@ -154,7 +154,7 @@ For issues or questions:
 
 ## Author
 
-Copyright (C) 2025 Daniel Sangorrin
+Copyright (C) 2025-2026 Daniel Sangorrin
 
 ---
 

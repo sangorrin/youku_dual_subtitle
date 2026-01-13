@@ -2,7 +2,7 @@
 
 ## Author
 
-Youku Dual Subtitle was created by **Daniel Sangorrin** (2025)
+Youku Dual Subtitle was created by **Daniel Sangorrin** (2025-2026)
 
 ## Acknowledgments
 
