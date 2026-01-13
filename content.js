@@ -801,9 +801,18 @@
     }
   }
 
-  // Handle word leave - hide dictionary popup
+  // Handle word leave - hide dictionary popup (with delay to allow moving to popup)
   function handleWordLeave(event) {
-    hideDictionaryPopup();
+    // Add a small delay to allow the user to move cursor to the popup
+    setTimeout(() => {
+      const popup = document.getElementById('zhongwen-window');
+      if (popup && popup.dataset.canHide === 'true') {
+        const contentWrapper = popup.querySelector('.popup-content');
+        if (contentWrapper && !contentWrapper.matches(':hover')) {
+          hideDictionaryPopup();
+        }
+      }
+    }, 100);
   }
 
   // Show dictionary popup near the hovered word
@@ -820,9 +829,52 @@
     popup.id = 'zhongwen-window';
     popup.className = 'zhongwen-popup';
 
+    // Create content wrapper (this will be interactive)
+    const contentWrapper = document.createElement('div');
+    contentWrapper.className = 'popup-content';
+
     // Parse dictionary entry and build HTML
     const html = buildDictionaryHTML(entry);
-    popup.innerHTML = html;
+    contentWrapper.innerHTML = html;
+
+    // Add copy button
+    const copyButton = document.createElement('button');
+    copyButton.className = 'copy-button';
+    copyButton.textContent = '📋';
+    copyButton.title = 'Copy term to clipboard';
+    copyButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      copyToClipboard(currentDictionaryWord);
+      // Visual feedback - show checkmark
+      copyButton.textContent = '✓';
+      setTimeout(() => {
+        copyButton.textContent = '📋';
+      }, 1000);
+    });
+    contentWrapper.appendChild(copyButton);
+
+    // Add content wrapper to popup
+    popup.appendChild(contentWrapper);
+
+    // Add popup hover handlers to keep it visible
+    let hideTimeout = null;
+    contentWrapper.addEventListener('mouseenter', () => {
+      // Cancel any pending hide operations
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+    });
+    contentWrapper.addEventListener('mouseleave', () => {
+      // Hide popup when leaving
+      hideDictionaryPopup();
+    });
+
+    // Store hide timeout function for the word leave handler
+    popup.dataset.canHide = 'false';
+    setTimeout(() => {
+      popup.dataset.canHide = 'true';
+    }, 100);
 
     // Add to document
     document.body.appendChild(popup);
@@ -855,6 +907,32 @@
     currentDictionaryEntry = null;
     currentDictionaryWord = null;
     document.removeEventListener('keydown', handleDictionaryKeyboard);
+  }
+
+  // Copy text to clipboard
+  function copyToClipboard(text) {
+    if (!text) return;
+
+    // Use the modern Clipboard API if available
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(err => {
+        console.error('%c[Dual-Subtitle] Failed to copy to clipboard:', 'color: #ff0000', err);
+      });
+    } else {
+      // Fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('%c[Dual-Subtitle] Failed to copy to clipboard:', 'color: #ff0000', err);
+      }
+      document.body.removeChild(textarea);
+    }
   }
 
   // Build HTML for dictionary popup

@@ -40,6 +40,41 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   pointer-events: none;
 }
+/* Content wrapper - make interactive */
+#zhongwen-window .popup-content {
+  pointer-events: auto !important;
+}
+/* Copy button */
+#zhongwen-window .copy-button {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  padding: 4px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: #555 !important;
+  pointer-events: auto !important;
+  transition: all 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0.7 !important;
+}
+
+#zhongwen-window .copy-button:hover {
+  opacity: 1 !important;
+  color: #000 !important;
+  transform: scale(1.1) !important;
+}
+
+#zhongwen-window .copy-button:active {
+  transform: scale(0.95) !important;
+}
+
+#zhongwen-window .copy-button svg {
+  display: block !important;
+}
 
 /* Chinese characters */
 #zhongwen-window .w-hanzi {
