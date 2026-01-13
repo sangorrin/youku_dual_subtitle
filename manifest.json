@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Youku Dual Subtitle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Dual subtitle display for Youku with Chinese-English Zhongwen hover dictionary",
   "icons": {
     "16": "icons/icon16.png",
